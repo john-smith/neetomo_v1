@@ -1,0 +1,169 @@
+* {
+	padding: 0;
+	margin: 0;
+	line-height: 1.3em;
+}
+
+body  {
+	background-image:url(../img/background2.gif);
+	text-align : center;
+}
+
+p {
+	margin-top:.3em;
+	margin-bottom:.3em;
+}
+
+#wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	width:800px;
+	text-align : left;
+}
+
+#header {
+	background-color:#00ad28;
+}
+
+#menu {
+	float:right;
+	width:230px;
+	margin-bottom:.3em;
+}
+
+#content {
+	width:560px;
+}
+
+ul {
+	list-style: none;
+}
+
+input {
+	margin-top:.3em;
+	margin-bottom:.3em;
+}
+
+#header h1 {
+	text-indent: -9999px;
+	background-image:url(../img/title.gif);
+	background-repeat:no-repeat;
+	height: 120px;
+}
+
+#menu h2 {
+	width: 4em;
+	font-size: 1em;
+	font-weight:normal;
+	color:#FFFFFF;
+	background-color:#0066FF;
+	margin-top:.3em;
+	padding: .1em;
+	padding-bottom: 0;
+	padding-left:.3em;
+}
+
+#menu .tab {
+	background-color:#00FFFF;
+	border:3px solid #0066ff;
+	padding: .3em;
+}
+
+#content h2 {
+	width: 7em;
+	font-size: 1em;
+	font-weight:normal;
+	color:#FFFFFF;
+	background-color:#00FF00;
+	margin-top:.3em;
+	padding: .1em;
+	padding-bottom: 0;
+	padding-left:.3em;
+}
+
+#content .tab {
+	background-color:#66FF66;
+	border:3px solid #00ff00;
+	padding: .3em;
+}
+
+#content .flash {
+	width: 550px;
+	height: 430px;
+	padding: 0;
+	margin: 0;
+	border:3px solid #00ff00;
+}
+
+#content dd {
+	padding-left: 1em;
+}
+
+#footer {
+	clear:both;
+}
+
+#footer p{
+	margin-top: .3em;
+	text-align:center;
+	font-style:italic;
+	background-color:#FF99FF;
+	border:3px solid #ff0000;
+	padding: .3em;
+}
+
+.word {
+	border:1px solid #000000;
+	margin-left:1em;
+	margin-bottom:.5em;
+}
+
+.word tr, .word td {
+	border:1px solid #000000;
+}
+
+.word td {
+	padding: .1em;
+}
+
+p.error {
+	color: #f00;
+}
+
+#cpu, #you {
+	background-color : #000;
+	color : #fff;
+	border : 2px solid #fff;
+	padding : 1em;
+
+	margin : .5em 1em;
+
+}
+
+#wakai {
+	margin-left : 1em;
+	margin-top :1em;
+}
+
+#wakai2 {
+	margin-left : 1em;
+}
+
+dt hr {
+	margin: 1em 0;
+}
+
+table {
+	border : 3px solid #cc6699;
+	border-collapse : collapse;
+}
+
+tr, td {
+	padding : .1em 1em;
+	border : 3px solid #cc6699;
+	background-color : #9999ff
+}
+
+.about {
+	margin-bottom : 2em;
+}

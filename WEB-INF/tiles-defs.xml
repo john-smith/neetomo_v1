@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions>
+	<!-- 基本形 -->
+	<definition name="commonLayout" path="/WEB-INF/view/common/commonLayout.jsp">
+		<put name="title" value="ニートの友達" />
+		<put name="header" value="/WEB-INF/view/common/header.jsp" />
+		<put name="menu" value="/WEB-INF/view/common/menu.jsp" />
+		<put name="footer" value="/WEB-INF/view/common/footer.jsp" />
+	</definition>
+
+
+	<!-- 非ログイン -->
+
+	<definition name="indexLayout" extends="commonLayout">
+		<put name="content" value="/WEB-INF/view/index.jsp" />
+	</definition>
+
+	<definition name="loginLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -ログイン画面-" />
+		<put name="content" value="/WEB-INF/view/login.jsp" />
+	</definition>
+
+	<definition name="registLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -ユーザ登録-" />
+		<put name="content" value="/WEB-INF/view/regist.jsp" />
+	</definition>
+
+	<definition name="confirmationLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -ユーザ登録 確認-" />
+		<put name="content" value="/WEB-INF/view/confirmation.jsp" />
+	</definition>
+
+	<definition name="completeLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -ユーザ登録 完了-" />
+		<put name="content" value="/WEB-INF/view/complete.jsp" />
+	</definition>
+
+	<definition name="aboutLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -about-" />
+		<put name="content" value="/WEB-INF/view/about.jsp" />
+	</definition>
+
+
+	<!-- ユーザ -->
+
+	<definition name="changePassLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -パスワード変更-" />
+		<put name="content" value="/WEB-INF/view/common/changePasswd.jsp" />
+	</definition>
+
+	<definition name="changePassCompleteLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -パスワード変更 完了-" />
+		<put name="content" value="/WEB-INF/view/common/changePassComplete.jsp" />
+	</definition>
+
+	<definition name="removeAccontLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -退会-" />
+		<put name="content" value="/WEB-INF/view/wakai/removeAccont.jsp" />
+	</definition>
+
+	<definition name="removeAccontCompleteLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -退会 完了-" />
+		<put name="content" value="/WEB-INF/view/wakai/removeAccountComplete.jsp" />
+	</definition>
+
+	<definition name="logoutLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -ログアウト-" />
+		<put name="content" value="/WEB-INF/view/logout.jsp" />
+	</definition>
+
+	<definition name="wordLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -単語操作-" />
+		<put name="content" value="/WEB-INF/view/wakai/word.jsp" />
+	</definition>
+
+	<definition name="addWordLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -単語登録-" />
+		<put name="content" value="/WEB-INF/view/wakai/addWord.jsp" />
+	</definition>
+
+	<definition name="addWordConfirmationLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -単語登録 確認-" />
+		<put name="content" value="/WEB-INF/view/wakai/addWordConfirmation.jsp" />
+	</definition>
+
+	<definition name="addWordCompleteLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -単語登録 完了-" />
+		<put name="content" value="/WEB-INF/view/wakai/addWordComplete.jsp" />
+	</definition>
+
+	<definition name="removeWordSearchLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -単語削除 検索-" />
+		<put name="content" value="/WEB-INF/view/wakai/removeWordSearch.jsp" />
+	</definition>
+
+	<definition name="removeWordLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -単語削除-" />
+		<put name="content" value="/WEB-INF/view/wakai/removeWord.jsp" />
+	</definition>
+
+	<definition name="removeWordConfirmationLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -単語削除 確認-" />
+		<put name="content" value="/WEB-INF/view/wakai/removeWordConfirmation.jsp" />
+	</definition>
+
+	<definition name="removeWordCompleteLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -単語削除 完了-" />
+		<put name="content" value="/WEB-INF/view/wakai/removeWordComplete.jsp" />
+	</definition>
+
+	<definition name="responseLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -応答文操作-" />
+		<put name="content" value="/WEB-INF/view/wakai/response.jsp" />
+	</definition>
+
+	<definition name="addResponseLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -応答文登録-" />
+		<put name="content" value="/WEB-INF/view/wakai/addResponse.jsp" />
+	</definition>
+
+	<definition name="addResponseConfirmationLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -応答文登録 確認-" />
+		<put name="content" value="/WEB-INF/view/wakai/addResponseConfirmation.jsp" />
+	</definition>
+
+	<definition name="addResponseCompleteLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -応答文登録 完了-" />
+		<put name="content" value="/WEB-INF/view/wakai/addResponseComplete.jsp" />
+	</definition>
+
+	<definition name="removeResponseSearchLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -応答文削除 検索-" />
+		<put name="content" value="/WEB-INF/view/wakai/removeResponseSearch.jsp" />
+	</definition>
+
+	<definition name="removeResponseLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -応答文削除-" />
+		<put name="content" value="/WEB-INF/view/wakai/removeResponse.jsp" />
+	</definition>
+
+	<definition name="removeResponseConfirmationLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -応答文削除 確認-" />
+		<put name="content" value="/WEB-INF/view/wakai/removeResponseConfirmation.jsp" />
+	</definition>
+
+	<definition name="removeResponseCompleteLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -応答文削除 完了-" />
+		<put name="content" value="/WEB-INF/view/wakai/removeResponseComplete.jsp" />
+	</definition>
+
+	<!-- アドミン -->
+
+	<definition name="acountLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -アカウント操作-" />
+		<put name="content" value="/WEB-INF/view/admin/acount.jsp" />
+	</definition>
+
+	<definition name="addUserLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -ユーザ追加-" />
+		<put name="content" value="/WEB-INF/view/admin/addUser.jsp" />
+	</definition>
+
+	<definition name="addUserConfirmationLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -ユーザ追加 確認-" />
+		<put name="content" value="/WEB-INF/view/admin/addUserConfirmation.jsp" />
+	</definition>
+
+	<definition name="addUserCompleteLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -ユーザ追加 確認-" />
+		<put name="content" value="/WEB-INF/view/admin/addUserComplete.jsp" />
+	</definition>
+
+	<definition name="removeUserLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -ユーザ削除-" />
+		<put name="content" value="/WEB-INF/view/admin/removeUser.jsp" />
+	</definition>
+
+	<definition name="removeUserConfirmationLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -ユーザ削除 確認-" />
+		<put name="content" value="/WEB-INF/view/admin/removeUserConfirmation.jsp" />
+	</definition>
+
+	<definition name="removeUserCompleteLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -ユーザ削除 完了-" />
+		<put name="content" value="/WEB-INF/view/admin/removeUserComplete.jsp" />
+	</definition>
+
+	<definition name="initUserpassLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -パスワード初期化-" />
+		<put name="content" value="/WEB-INF/view/admin/initUserpass.jsp" />
+	</definition>
+
+	<definition name="initUserpassConfirmationLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -ユーザパスワード初期化-" />
+		<put name="content" value="/WEB-INF/view/admin/initUserpassConfirmation.jsp" />
+	</definition>
+
+	<definition name="initUserpassCompleteLayout" extends="commonLayout">
+		<put name="title" value="ニートの友達 -ユーザパスワード初期化 完了-" />
+		<put name="content" value="/WEB-INF/view/admin/initUserpassComplete.jsp" />
+	</definition>
+
+
+	<!-- エラー画面 -->
+
+	<definition name="sessionErrorLayout" extends="commonLayout">
+		<put name="content" value="/WEB-INF/view/sessionError.jsp" />
+	</definition>
+
+	<definition name="errorLayout" extends="commonLayout">
+		<put name="content" value="/WEB-INF/view/error.jsp" />
+	</definition>
+
+</tiles-definitions>

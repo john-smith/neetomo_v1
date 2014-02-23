@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<clay-model clay-version="1.4.2">
+<database-model alias="" author="" begin-script="" end-script="" name="wakai" remarks="" sql-dialect-id="jp.azzurri.clay.dialect.Postgre_7_3_Dialect" uid="14dba7f:11838367388:-7fff" version="1.0">
+<database-model-description/>
+<schema-list>
+<schema alias="" name="public" remarks="" uid="14dba7f:11838367388:-7ffc">
+<schema-description/>
+<domain-list/>
+<table-list>
+<table alias="" name="wakai_user" remarks="" uid="14dba7f:11838367388:-7ffe">
+<table-description/>
+<table-figure-bounds height="94" width="237" x="32" y="47"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="wakai_id" remarks="" uid="14dba7f:11838367388:-7ff7">
+<column-description/>
+<data-type jdbc-type="4" name="SERIAL" selected-variant-pattern="SERIAL">
+<variant type-name-pattern="SERIAL"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="16" decimal-digits="0" default-value="" mandatory="true" name="wakai_login_name" remarks="" uid="14dba7f:11838367388:-7ff6">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="16" decimal-digits="0" default-value="" mandatory="true" name="wakai_login_passwd" remarks="" uid="14dba7f:11838367388:-7ff3">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="16" decimal-digits="0" default-value="" mandatory="true" name="wakai_role" remarks="" uid="14dba7f:11838367388:-7ff2">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_WAKAI_USER" remarks="" uid="14dba7f:11838367388:-7ffd">
+<primary-key-description/>
+<primary-key-column name="wakai_login_name"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list/>
+</table>
+<table alias="" name="wakai_word" remarks="" uid="14dba7f:11838367388:-7fed">
+<table-description/>
+<table-figure-bounds height="59" width="190" x="31" y="169"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="wakai_id" remarks="" uid="14dba7f:11838367388:-7fe9">
+<column-description/>
+<data-type jdbc-type="4" name="SERIAL" selected-variant-pattern="SERIAL">
+<variant type-name-pattern="SERIAL"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="1000" decimal-digits="0" default-value="" mandatory="true" name="wakai_word" remarks="" uid="14dba7f:11838367388:-7fe8">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_WAKAI_WORD" remarks="" uid="14dba7f:11838367388:-7fec">
+<primary-key-description/>
+<primary-key-column name="wakai_id"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list/>
+</table>
+<table alias="" name="wakai_response" remarks="" uid="14dba7f:11838367388:-7fe7">
+<table-description/>
+<table-figure-bounds height="60" width="255" x="341" y="167"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="wakai_id" remarks="" uid="14dba7f:11838367388:-7fe3">
+<column-description/>
+<data-type jdbc-type="4" name="SERIAL" selected-variant-pattern="SERIAL">
+<variant type-name-pattern="SERIAL"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="256" decimal-digits="0" default-value="" mandatory="true" name="wakai_word_response" remarks="" uid="14dba7f:11838367388:-7fe1">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_WAKAI_RESPONSE" remarks="" uid="14dba7f:11838367388:-7fe6">
+<primary-key-description/>
+<primary-key-column name="wakai_id"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list/>
+</table>
+<table alias="" name="wakai_null" remarks="" uid="1a9570:118592f2b5e:-7ff9">
+<table-description/>
+<table-figure-bounds height="60" width="255" x="341" y="46"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="wakai_id" remarks="" uid="1a9570:118592f2b5e:-7ff5">
+<column-description/>
+<data-type jdbc-type="4" name="SERIAL" selected-variant-pattern="SERIAL">
+<variant type-name-pattern="SERIAL"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="100" decimal-digits="0" default-value="" mandatory="true" name="wakai_word_response" remarks="" uid="1a9570:118592f2b5e:-7ff4">
+<column-description/>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_WAKAI_NULL" remarks="" uid="1a9570:118592f2b5e:-7ff8">
+<primary-key-description/>
+<primary-key-column name="wakai_id"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list/>
+</table>
+</table-list>
+</schema>
+</schema-list>
+</database-model>
+</clay-model>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+  <data-sources>
+  </data-sources>
+  
+  <form-beans>
+  	<form-bean name="loginForm" type="form.noLogin.LoginForm" />
+  	<form-bean name="registForm" type="form.noLogin.RegistForm" />
+  	<form-bean name="changePassForm" type="form.login.ChangePassForm" />
+  	<form-bean name="removeUserForm" type="form.admin.RemoveUserForm" />
+  	<form-bean name="addWordForm" type="form.wakai.AddWordForm" />
+  	<form-bean name="removeWordForm" type="form.wakai.RemoveWordForm" />
+  	<form-bean name="removeWordConfirmationForm" type="form.wakai.RemoveWordConfirmationForm" />
+  	
+  </form-beans>
+  
+  <global-exceptions>
+  	<exception key="errors.error" type="java.lang.Exception" path="errorLayout" />
+  
+  </global-exceptions>
+  
+  <global-forwards>
+  	<forward name="failed" path="/index.do" />
+  </global-forwards>
+  
+  <action-mappings>
+  	<!-- forwardActon -->
+  	
+  	<!--  非ログイン  -->
+  	
+  	<action path="/index" type="org.apache.struts.actions.ForwardAction" parameter="indexLayout" />
+  	<action path="/login" type="org.apache.struts.actions.ForwardAction" parameter="loginLayout" />
+  	<action path="/regist" type="org.apache.struts.actions.ForwardAction" parameter="registLayout" />
+  	<action path="/about" type="org.apache.struts.actions.ForwardAction" parameter="aboutLayout" />
+  	
+  	
+  	<!-- 一般ユーザ -->
+  	
+  	<action path="/wakai/changePass" type="org.apache.struts.actions.ForwardAction" parameter="changePassLayout" />
+  	<action path="/wakai/word" type="org.apache.struts.actions.ForwardAction" parameter="wordLayout" />
+  	<action path="/wakai/addWord" type="org.apache.struts.actions.ForwardAction" parameter="addWordLayout" />
+  	<action path="/wakai/removeWordSearch" type="org.apache.struts.actions.ForwardAction" parameter="removeWordSearchLayout" />
+  	<action path="/wakai/response" type="org.apache.struts.actions.ForwardAction" parameter="responseLayout" />
+  	<action path="/wakai/addResponse" type="org.apache.struts.actions.ForwardAction" parameter="addResponseLayout" />
+  	<action path="/wakai/removeResponseSearch" type="org.apache.struts.actions.ForwardAction" parameter="removeResponseSearchLayout" />
+  	
+  	
+  	<!-- アドミン -->
+  	
+  	<action path="/admin/acount" type="org.apache.struts.actions.ForwardAction" parameter="acountLayout" />
+  	<action path="/admin/addUser" type="org.apache.struts.actions.ForwardAction" parameter="addUserLayout" />
+  	
+
+	<!-- エラー -->
+	  	
+  	<action path="/sessionError" type="org.apache.struts.actions.ForwardAction" parameter="sessionErrorLayout" />
+  	
+  	<!-- 普通のアクション -->
+  	
+  	<!-- 非ログイン -->
+  	
+  	<action path="/afterLogin" type="action.noLogin.LoginAction" name="loginForm" scope="request" validate="true" input="/login.do">
+  		<forward name="success" path="/index.do" />
+  		<forward name="failed" path="/login.do" />
+  	</action>
+  	
+  	<action path="/confirmation" type="action.noLogin.RegistAction" name="registForm" scope="request" validate="true" input="/regist.do">
+  		<forward name="success" path="confirmationLayout" />
+  		<forward name="failed" path="/regist.do" />
+  	</action>
+  	  	
+  	<action path="/complete" type="action.noLogin.CompleteAction" scope="request">
+  		<forward name="success" path="completeLayout" />
+  	</action>
+  	
+  	<action path="/hoge2" type="hoge.HogeAction" scope="request">
+  		<forward name="success" path="/WEB-INF/view/chatbot/res.jsp" />
+  	</action>
+  	
+  	
+  	<!-- 一般ユーザ -->
+  	
+  	<action path="/wakai/removeAccount" type="action.wakai.RemoveAction" scope="request">
+  		<forward name="success" path="removeAccontLayout" />
+  	</action>
+  	
+  	<action path="/wakai/removeAccountComplete" type="action.wakai.RemoveAccountAction" scope="request">
+  		<forward name="success" path="removeAccontCompleteLayout" />
+  	</action>
+  	
+  	<action path="/wakai/logout" type="action.login.LogoutAction" scope="request" >
+  		<forward name="logout" path="logoutLayout"></forward>
+  	</action>
+  	
+  	<action path="/wakai/changePassComplete" type="action.login.ChangePassAction" name="changePassForm" scope="request" validate="true" input="/wakai/changePass.do">
+  		<forward name="success" path="changePassCompleteLayout" />
+  	</action>
+  	
+  	<action path="/wakai/addWordConfirmation" type="action.wakai.AddWordAction" name="addWordForm" scope="request" validate="true" input="/wakai/addWord.do">
+  		<forward name="success" path="addWordConfirmationLayout" />
+  		<forward name="failed" path="/wakai/addWord.do" />
+  	</action>
+  	
+  	<action path="/wakai/addWordComplete" type="action.wakai.AddWordCompleteAction" scope="request" >
+  		<forward name="success" path="addWordCompleteLayout" />
+  	</action>
+  	
+  	<action path="/wakai/removeWord" type="action.wakai.RemoveWordAction" scope="request" name="removeWordForm" validate="true" input="/wakai/removeWordSearch.do">
+  		<forward name="success" path="removeWordLayout" />
+  	</action>
+  	
+  	<action path="/wakai/removeWordConfirmation" type="action.wakai.RemoveWordConfirmationAction" scope="request" name="removeWordConfirmationForm">
+  		<forward name="success" path="removeWordConfirmationLayout" />
+  		<forward name="failed" path="/wakai/removeWord.do" />
+  	</action>
+  	
+  	<action path="/wakai/removeWordComplete" type="action.wakai.RemoveWordCompleteAction" scope="request" >
+  		<forward name="success" path="removeWordCompleteLayout" />
+  	</action>
+  	
+  	<action path="/wakai/addResponseConfirmation" type="action.wakai.AddResponseAction" name="addWordForm" scope="request" validate="true" input="/wakai/addResponse.do">
+  		<forward name="success" path="addResponseConfirmationLayout" />
+  		<forward name="failed" path="/wakai/addResponse.do" />
+  	</action>
+  	
+  	<action path="/wakai/addResponseComplete" type="action.wakai.AddResponseCompleteAction" scope="request" >
+  		<forward name="success" path="addResponseCompleteLayout" />
+  	</action>
+  	
+  	<action path="/wakai/removeResponse" type="action.wakai.RemoveResponseAction" scope="request" name="removeWordForm" validate="true" input="/wakai/removeResponseSearch.do">
+  		<forward name="success" path="removeResponseLayout" />
+  	</action>
+  	
+  	<action path="/wakai/removeResponseConfirmation" type="action.wakai.RemoveResponseConfirmationAction" scope="request" name="removeWordConfirmationForm">
+  		<forward name="success" path="removeResponseConfirmationLayout" />
+  		<forward name="failed" path="/wakai/removeResponse.do" />
+  	</action>
+  	
+  	<action path="/wakai/removeResponseComplete" type="action.wakai.RemoveResponseCompleteAction" scope="request" >
+  		<forward name="success" path="removeResponseCompleteLayout" />
+  	</action>
+  	
+  	<!-- アドミン -->
+  	<action path="/admin/addUserConfirmation" type="action.noLogin.RegistAction" name="registForm" scope="request" validate="true" input="/admin/addUser.do">
+  		<forward name="success" path="addUserConfirmationLayout" />
+  		<forward name="failed" path="/admin/addUser.do" />
+  	</action>
+  	
+  	<action path="/admin/addUserComplete" type="action.noLogin.CompleteAction" scope="request">
+  		<forward name="success" path="addUserCompleteLayout" />
+  	</action>
+  	
+  	<action path="/admin/removeUser" type="action.admin.RemoveUserAction" scope="request">
+  		<forward name="success" path="removeUserLayout" />
+  	</action>
+  	
+  	<action path="/admin/removeUserConfirmation" type="action.admin.RemoveUserConfirmationAction" name="removeUserForm" scope="request">
+  		<forward name="success" path="removeUserConfirmationLayout" />
+  		<forward name="failed" path="/admin/initUserpass.do" />
+  	</action>
+  	
+  	<action path="/admin/removeUserComplete" type="action.admin.RemoveUserCompleteAction" scope="request">
+  		<forward name="success" path="removeUserCompleteLayout" />
+  	</action>
+  	
+  	<action path="/admin/initUserpass" type="action.admin.RemoveUserAction" scope="request">
+  		<forward name="success" path="initUserpassLayout" />
+  	</action>
+  	
+  	<action path="/admin/initUserpassConfirmation" type="action.admin.RemoveUserConfirmationAction" name="removeUserForm" scope="request">
+  		<forward name="success" path="initUserpassConfirmationLayout" />
+  		<forward name="failed" path="/admin/initUserpass.do" />
+  	</action>
+  	
+  	<action path="/admin/initUserpassComplete" type="action.admin.InitUserpassCompleteAction" scope="request">
+  		<forward name="success" path="initUserpassCompleteLayout" />
+  	</action>
+
+  </action-mappings>
+  
+  <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+  
+  <message-resources parameter="MessageResources"/>
+  
+  <plug-in className="org.apache.struts.tiles.TilesPlugin">
+    <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml"/>
+    <set-property property="moduleAware" value="true"/>
+  </plug-in>
+  
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+  </plug-in>
+</struts-config>
